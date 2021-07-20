@@ -20,6 +20,16 @@ const products = [
 ];
 
 
-function listAllProducts(category, initialPrice, finalPrice) {
+function listAllProducts(parameters) {
+  const { category, initialPrice, finalPrice } = parameters;
 
+  const allProducts = [];
+
+  if (category) {
+    const filteredByCategory = products.filter(product => product.category === category);
+    allProducts.push(...filteredByCategory);
+  }
 }
+
+listAllProducts({ category: "Refrigerante" });
+
