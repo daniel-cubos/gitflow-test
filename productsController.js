@@ -10,7 +10,7 @@ const products = [
     category: "Refrigerante"
   },
   {
-    id: 1,
+    id: 3,
     name: "Leite Moça",
     category: "Leite condensado"
   }
