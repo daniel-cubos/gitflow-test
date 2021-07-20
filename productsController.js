@@ -1,3 +1,5 @@
+const { removeDuplicatedItems } = require('./util');
+
 const products = [
   {
     id: 1,
@@ -20,13 +22,23 @@ const products = [
 ];
 
 
-function listAllProducts(category, initialPrice, finalPrice) {
+function listAllProducts(parameters) {
+  const { category, initialPrice, finalPrice } = parameters;
 
   const allProducts = [];
+
+  if (category) {
+    const filteredByCategory = products.filter(product => product.category === category);
+    allProducts.push(...filteredByCategory);
+  }
 
   if (initialPrice && finalPrice) {
     const filteredByPrices = products.filter(product => product.price >= initialPrice && product.price <= finalPrice);
     allProducts.push(...filteredByPrices);
   }
-  return allProducts;
+  const withoutDupplicatedItems = removeDuplicatedItems(allProducts);
+
+  return withoutDupplicatedItems;
 }
+
+listAllProducts({ category: "Refrigerante", initialPrice: 1, finalPrice: 10 });
