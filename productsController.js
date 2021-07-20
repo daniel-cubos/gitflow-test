@@ -28,8 +28,5 @@ function listAllProducts(category, initialPrice, finalPrice) {
     const filteredByPrices = products.filter(product => product.price >= initialPrice && product.price <= finalPrice);
     allProducts.push(...filteredByPrices);
   }
-  console.log(allProducts);
   return allProducts;
 }
-
-listAllProducts('', 1, 10);
