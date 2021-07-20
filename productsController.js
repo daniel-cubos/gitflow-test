@@ -29,6 +29,8 @@ function listAllProducts(parameters) {
     const filteredByCategory = products.filter(product => product.category === category);
     allProducts.push(...filteredByCategory);
   }
+
+  return allProducts;
 }
 
 listAllProducts({ category: "Refrigerante" });
