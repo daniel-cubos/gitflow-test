@@ -20,6 +20,6 @@ const products = [
 ];
 
 
-function listAllProducts(category) {
+function listAllProducts(category, initialPrice, finalPrice) {
 
 }
